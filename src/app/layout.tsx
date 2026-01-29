@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navbar from "@/components/Navbar";
 
 const inter = Inter({
@@ -14,6 +15,8 @@ export const metadata: Metadata = {
     "Beautiful, free images and photos that you can download and use for any project. Better than any royalty free or stock photos.",
 };
 
+const queryClient = new QueryClient();
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <Navbar />
+        <QueryClientProvider client={queryClient}>
+          <Navbar />
 
-        {children}
+          {children}
+        </QueryClientProvider>
       </body>
     </html>
   );

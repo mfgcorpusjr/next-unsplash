@@ -1,3 +1,9 @@
+import ImageList from "@/components/ImageList";
+
 export default function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <main className="container mx-auto px-4 py-12">
+      <ImageList />
+    </main>
+  );
 }

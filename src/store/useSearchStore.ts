@@ -6,7 +6,7 @@ type SearchStore = {
 };
 
 const useSearchStore = create<SearchStore>()((set) => ({
-  search: "",
+  search: "cat",
 
   setSearch: (search: string) => set({ search }),
 }));

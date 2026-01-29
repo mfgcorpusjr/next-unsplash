@@ -1,6 +1,7 @@
 "use client";
 
 import { LucideSearch } from "lucide-react";
+import { useDebouncedCallback } from "use-debounce";
 
 import {
   InputGroup,
@@ -12,11 +13,15 @@ import useSearchStore from "@/store/useSearchStore";
 export default function SearchInput() {
   const setSearch = useSearchStore((state) => state.setSearch);
 
+  const debounced = useDebouncedCallback((value) => {
+    setSearch(value);
+  }, 1000);
+
   return (
     <InputGroup className="max-w-lg bg-muted">
       <InputGroupInput
         placeholder="Search photos and illustrations"
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => debounced(e.target.value)}
       />
 
       <InputGroupAddon>

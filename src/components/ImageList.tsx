@@ -14,7 +14,7 @@ export default function ImageList() {
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["images", { search }],
-    queryFn: () => api.get(`/search/photos?per_page=${20}&query=${search}`),
+    queryFn: () => api.get(`/search/photos?per_page=${30}&query=${search}`),
   });
 
   if (isLoading) {

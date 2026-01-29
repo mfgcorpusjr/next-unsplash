@@ -13,8 +13,8 @@ import useSearchStore from "@/store/useSearchStore";
 export default function SearchInput() {
   const setSearch = useSearchStore((state) => state.setSearch);
 
-  const debounced = useDebouncedCallback((value) => {
-    setSearch(value);
+  const debounced = useDebouncedCallback((value: string) => {
+    setSearch(value.trim());
   }, 1000);
 
   return (

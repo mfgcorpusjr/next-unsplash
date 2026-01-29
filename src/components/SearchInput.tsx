@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { LucideSearch } from "lucide-react";
 
 import {
@@ -9,14 +8,14 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group";
 
+import useSearchStore from "@/store/useSearchStore";
 export default function SearchInput() {
-  const [search, setSearch] = useState("");
+  const setSearch = useSearchStore((state) => state.setSearch);
 
   return (
     <InputGroup className="max-w-lg bg-muted">
       <InputGroupInput
         placeholder="Search photos and illustrations"
-        value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
 

@@ -13,7 +13,7 @@ export default function UserDetails({ user }: UserDetailsProps) {
       <Link
         href={user.links.html}
         target="_blank"
-        className="flex items-center gap-4 cursor-pointer"
+        className="flex items-center gap-2 cursor-pointer"
       >
         <Image
           src={user.profile_image.small}
@@ -23,7 +23,7 @@ export default function UserDetails({ user }: UserDetailsProps) {
           className="size-8 rounded-full"
         />
 
-        <span className="text-white font-semibold">{user.name}</span>
+        <span className="text-white text-sm font-semibold">{user.name}</span>
       </Link>
     </div>
   );

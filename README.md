@@ -5,6 +5,7 @@ A working version of this app is available at https://next-unsplash-six.vercel.a
 
 ### Key Dependencies
 - Next 16
+- Unsplash API
 - Tanstack Query
 - Axios
 - Zustand

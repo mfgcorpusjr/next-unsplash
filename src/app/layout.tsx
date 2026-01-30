@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NextUnsplash",
+  title: "Next Unsplash",
   description:
     "Beautiful, free images and photos that you can download and use for any project. Better than any royalty free or stock photos.",
 };
